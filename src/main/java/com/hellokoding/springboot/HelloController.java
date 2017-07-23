@@ -12,4 +12,10 @@ public class HelloController {
         model.addAttribute("name", name);
         return "hello";
     }
+    
+    @RequestMapping("/")
+    public String index(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
+        model.addAttribute("name", name);
+        return "index";
+    }
 }
