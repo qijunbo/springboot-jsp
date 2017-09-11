@@ -21,7 +21,6 @@ buildscript {
     }
 }
 
-apply plugin: 'war'
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'eclipse-wtp'
@@ -33,12 +32,13 @@ jar {
   
 }
 
-war {
-    baseName = 'springbootjspapp'
-    // version =  '1.0.0-' + currentTime
-  
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
 }
- 
+
+sourceSets.main.java.srcDirs = ['src/main/java']
+sourceSets.main.resources.srcDirs = ['src/main/webapp','src/main/resources']
+
 repositories {
 	maven { url 'http://maven.aliyun.com/nexus/content/repositories/central/' }
 	maven { url 'http://repo.spring.io/libs-snapshot'}
@@ -49,10 +49,6 @@ repositories {
 	maven { url 'http://maven.oschina.net/content/groups/public/' }
 	maven { url 'https://repository.jboss.org/nexus/content/groups/public-jboss/' }
     mavenCentral()
-}
-
-bootRepackage {
-    executable = true
 }
 
 configurations {
