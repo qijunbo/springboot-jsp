@@ -51,9 +51,9 @@ repositories {
     mavenCentral()
 }
 
-bootRepackage {
-    executable = true
-}
+//bootRepackage {
+//    executable = true
+//}
 
 configurations {
 	 providedRuntime
