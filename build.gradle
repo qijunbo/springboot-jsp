@@ -23,7 +23,6 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
-apply plugin: 'eclipse-wtp'
 apply plugin: 'spring-boot'
 
 jar {
@@ -62,8 +61,11 @@ targetCompatibility = 1.8
 dependencies {
 	 
     compile("org.springframework.boot:spring-boot-starter-web")
-	providedRuntime ("org.springframework.boot:spring-boot-starter-tomcat")
-	providedRuntime ("org.apache.tomcat.embed:tomcat-embed-jasper")
+    compile("org.apache.tomcat.embed:tomcat-embed-jasper")
+	compile("org.springframework.boot:spring-boot-starter-tomcat")
+	
+	//optional 
+	compile("javax.servlet:jstl")
  
 }
 
