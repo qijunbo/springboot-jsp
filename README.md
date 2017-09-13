@@ -1,7 +1,16 @@
+Executable Spring-boot jar ?
+==
+It's proved that spring-boot doesn't support jsp very well.  don't not waste time on this.
+
+[https://dzone.com/articles/spring-boot-with-jsps-in-executable-jars-1](https://dzone.com/articles/spring-boot-with-jsps-in-executable-jars-1)
+
+
 # Spring Boot Hello World Example with JSP
 
 ## Guide
 https://hellokoding.com/spring-boot-hello-world-example-with-jsp/
+
+
 
 ## What you'll need
 - JDK 1.7 or later
@@ -69,4 +78,5 @@ drop it into  tomcat's  webapp folder.
 
 http://localhost:8080/springbootjsbapp
 ```
-	
+
+
