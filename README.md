@@ -1,16 +1,13 @@
+# Spring Boot Hello World Example with JSP
+
 Executable Spring-boot jar ?
 ==
 It's proved that spring-boot doesn't support jsp very well.  don't not waste time on this.
 
 [https://dzone.com/articles/spring-boot-with-jsps-in-executable-jars-1](https://dzone.com/articles/spring-boot-with-jsps-in-executable-jars-1)
 
-
-# Spring Boot Hello World Example with JSP
-
 ## Guide
 https://hellokoding.com/spring-boot-hello-world-example-with-jsp/
-
-
 
 ## What you'll need
 - JDK 1.7 or later
@@ -31,7 +28,23 @@ There are significant differences between jar verion and war version.
 
 - jar 
 	
-in the build.gradle file
+
+If you want to generate a executable jar file,   you have to use this plug-in,  actually, It's heavily rely on this plug-in.
+```
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-maven-plugin</artifactId>
+<version>1.4.2.RELEASE</version>
+```
+for more detail, please refer to the pom.xml in this sample.
+
+run ``` mvn clean package ``` to  create the jar file.     But the more complicated your project is, the more trouble you encounter, I promise. so again. 
+
+### do NOT waste time on  executable jar which support jsp. ###
+
+To support jsp means you can access using url like  http://xxxx.com/xxx.jsp   
+
+
+in the build.gradle file  (this DOES NOT work well,  you can only run this in eclipse)
 
 you need to privid this at compile time instead of runtime.
 ```
@@ -49,14 +62,20 @@ spring.mvc.view.prefix: /WEB-INF/jsp/
 spring.mvc.view.suffix: .jsp
 ```
 
-build this way:
+- Run this way:
+
+``` 
+java -jar  xxxx.jar 
 ```
-java -jar  xxxx.jar
+
+you can see different things by clicking: 
 
 http://localhost:80
 
 http://localhost:80/index.jsp
-```
+
+http://localhost:80/hello
+
 - war
 
 	
@@ -76,7 +95,7 @@ way to use:
 ```
 drop it into  tomcat's  webapp folder.
 
-http://localhost:8080/springbootjsbapp
+http://localhost:80/springboot_jsp
 ```
 
 
