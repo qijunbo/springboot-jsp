@@ -27,14 +27,9 @@ apply plugin: 'eclipse'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'spring-boot'
 
-jar {
-    baseName = 'springbootjspapp'
-    version =  '1.0.0-' + currentTime
-  
-}
 
 war {
-    baseName = 'springbootjspapp'
+    baseName = 'springboot_jsp'
     // version =  '1.0.0-' + currentTime
   
 }
